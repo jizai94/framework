@@ -1,0 +1,122 @@
+@function setFont($ext) {
+  @return '../images/fonts/iconfont.' + $ext
+}
+
+html {
+  &.bg-white {
+    background-color: #fff;
+  }
+
+  &.bg-light-white {
+    background-color: #f9fafc;
+  }
+}
+
+.web {
+  .app-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+.app-wrap {
+  font-size: 0.24rem;
+}
+
+// @font-face {
+//   font-family: 'iconfont';
+//   src: url(setFont('eot'));
+//   src: url(setFont('eot?#iefix')) format('embedded-opentype'),
+//   url(setFont('woff')) format('woff'),
+//   url(setFont('ttf')) format('truetype'),
+//   url(setFont('svg#iconfont')) format('svg');
+// }
+
+@font-face {
+  font-family: 'iconfont';
+  src: url(setFont('ttf')) format('truetype');
+}
+
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg)
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg)
+  }
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 0.32rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-grid-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+
+  .cell {
+    padding: 0.2rem 0.3rem;
+
+    span {
+      font-size: 0.28rem;
+      margin-left: 0.1rem;
+    }
+
+    .iconfont {
+      font-size: 0.46rem;
+      color: #1ea1ff;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.app-avatar {
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.app-redirect {
+  padding: 0.3rem;
+  text-align: center;
+  font-size: 0.28rem;
+}
+
+.app-checkbox {
+  height: 0.44rem;
+  width: 0.44rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #282967;
+  transition: background-color .3s;
+  flex-shrink: 0;
+
+  &.checked {
+    background-color: #282967;
+    border: none;
+    
+    &:after {
+      @extend .iconfont;
+      color: #fff;
+      content: '\e602';
+      font-size: 0.24rem;
+      line-height: 0.44rem;
+    }
+  }
+
+}
